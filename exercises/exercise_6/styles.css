@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+}
+.title-bar {
+    background: rgb(71, 70, 70);
+    color: white;
+    padding: 14px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    -webkit-app-region: drag;
+}
+
+.close-button {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+.new-note-button {
+    background: transparent;
+    color: rgb(51, 50, 50);
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+#btn-open-file {
+    background: transparent;
+    color: rgb(51, 50, 50);
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+#area-content {
+    width: 100%;
+    resize: none;
+    border-radius: 5px;
+    border: none;
+    background: rgb(51, 50, 50);
+    color: white;
+    height: 130px;
+}
+
+.content {
+    padding: 14px;
+}
