@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://maxcdn.bootstrapcdn.com; script-src https://code.jquery.com 'self' 'unsafe-inline'; style-src 'self'
+     'unsafe-inline' https://maxcdn.bootstrapcdn.com">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="./styles.css" rel="stylesheet">
+  <script>
+    delete module.exports
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="./renderer.js"></script>
+
+  <title>Hashing</title>
+</head>
+
+<body>
+  <div class="container-fluid" id="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3 class="hash-heading">Input</h3>
+        <textarea rows="2" class="form-control text-input" id="text-input"
+          placeholder="Enter the text to hash it.."></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3 class="hash-heading">MD5</h3>
+        <pre class="hash-output" id="md5-output"></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3 class="hash-heading">SHA-1</h3>
+        <pre class="hash-output" id="sha1-output"></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3 class="hash-heading">SHA-256</h3>
+        <pre class="hash-output" id="sha256-output"></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3 class="hash-heading">SHA-512</h3>
+        <pre class="hash-output" id="sha512-output"></pre>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

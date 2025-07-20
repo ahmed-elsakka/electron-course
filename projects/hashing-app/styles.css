@@ -1,0 +1,24 @@
+/* styles.css */
+html, body, .container-fluid {
+    background-color:darkslateblue;
+}
+
+.text-input {
+    font-size: 16px;
+    background-color: gray;
+    color: white;
+}
+
+.text-input::placeholder {
+    color: white;
+}
+
+.hash-heading {
+    color: white;
+}
+
+.hash-output {
+    background-color: gray;
+    color: white;
+}
+/* Add styles here to customize the appearance of your app */
