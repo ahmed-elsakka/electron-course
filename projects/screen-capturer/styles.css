@@ -1,0 +1,41 @@
+html, body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.navbar {
+    height: 50px;
+    background: gray;
+    color: white;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 20px;
+    -webkit-app-region: drag;
+}
+
+.img-camera {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.img-camera:hover {
+    transform: scale(1.1);
+}
+
+.div-camera-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
