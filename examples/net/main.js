@@ -22,10 +22,10 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
   createWindow()
 
-  const request = net.request('https://jsonplaceholder.typicode.com/todos/1')
+  /*const request = net.request('https://jsonplaceholder.typicode.com/todos/1')
   request.on('response', (response) => {
     console.log(`STATUS: ${response.statusCode}`)
     console.log(`HEADERS: ${JSON.stringify(response.headers)}`)
@@ -36,7 +36,13 @@ app.whenReady().then(() => {
       console.log('No more data in response.')
     })
   })
-  request.end()
+  request.end()*/
+
+  const respone = await net.fetch("https://jsonplaceholder.typicode.com/todos/1")
+  if(respone.ok) {
+    const body = await respone.json();
+    console.log(body)
+  }
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
