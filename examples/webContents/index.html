@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <link href="./styles.css" rel="stylesheet">
+  <title>WebContents Nav Control</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #controls {
+      padding: 10px;
+      background: #f0f0f0;
+      display: flex;
+      gap: 10px;
+    }
+    iframe { width: 100%; height: calc(100vh - 50px); border: none; }
+    #status {
+      margin-left: auto;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+<!--
+    <div id="controls">
+    <button id="back">Back</button>
+    <button id="forward">Forward</button>
+    <button id="reload">Reload</button>
+    <input id="urlInput" type="text" placeholder="Enter URL" style="flex: 1;" />
+    <button id="go">Go</button>
+    <span id="status">Idle</span>
+  </div>
+-->
+
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+</body>
+
+</html>

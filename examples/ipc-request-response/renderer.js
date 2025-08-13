@@ -8,3 +8,12 @@ document.getElementById("btn-send").addEventListener("click", async () => {
 
   alert(`Main process response: ${mainProcessResponse}`)
 });
+
+
+ipcMain.on('get-status', (event) => {
+  event.sender.send('status-response', 'Running');
+});
+
+ipcRenderer.on('status-response', (event, status) => {
+  console.log('Received:', status);
+});
