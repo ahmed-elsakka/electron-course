@@ -11,8 +11,13 @@ contextBridge.exposeInMainWorld("electronAPI", {
     ipcRenderer.send("save-file-dialog", content);
   },
   onFileLoaded: (callback) => {
-      ipcRenderer.on("text-file-content", (event, { canceled, contents }) => {
-        callback({canceled, contents});
+      ipcRenderer.on("text-file-content", (event, { canceled, contents, fileName }) => {
+        callback({canceled, contents, fileName});
+    })
+  },
+  onFileSaved: (callback) => {
+      ipcRenderer.on("text-file-saved", (event, { success, fileName }) => {
+        callback({success, fileName});
     })
   }
 })

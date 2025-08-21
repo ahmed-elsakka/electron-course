@@ -6,6 +6,10 @@ const fs = require("fs");
 let mainWindow;
 let childWindow;
 
+function getFileName(filePath) {
+  return path.basename(filePath, path.extname(filePath));
+}
+
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
@@ -91,10 +95,12 @@ ipcMain.on("open-file-dialog", async (event) => {
 
   const filePath = filePaths[0];
   const contents = fs.readFileSync(filePath, "utf8");
+  const fileName = getFileName(filePath);
 
   event.sender.send("text-file-content", {
     canceled: false,
-    contents
+    contents,
+    fileName
   });
 });
 
@@ -106,7 +112,8 @@ ipcMain.on("save-file-dialog", async (event, content) => {
 
   if(!canceled && filePath) {
     fs.writeFileSync(filePath, content, "utf8");
-    event.sender.send("text-file-saved", {success: true, filePath});
+    const fileName = getFileName(filePath);
+    event.sender.send("text-file-saved", {success: true, fileName});
     dialog.showMessageBox({
       title: "File saved",
       type: "info",

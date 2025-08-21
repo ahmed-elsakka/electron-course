@@ -1,11 +1,21 @@
+const divTitle = document.getElementById("div-title");
+
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btn-close").addEventListener("click", () => {
         window.close();
     });
 
-    window.electronAPI.onFileLoaded(({canceled, contents}) => {
+
+    window.electronAPI.onFileLoaded(({canceled, contents, fileName}) => {
     if(!canceled) {
           document.getElementById("area-content").value = contents;
+          divTitle.innerText = fileName;
+      }
+    })    
+    
+    window.electronAPI.onFileSaved(({success, fileName}) => {
+    if(success) {
+          divTitle.innerText = fileName;
       }
     })
 })
